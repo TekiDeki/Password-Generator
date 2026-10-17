@@ -6,7 +6,7 @@ A small, dependency-free password generator using the browser’s Web Crypto API
 
 ## Features
 
-- Length **8–128**; generate **1–100** passwords at once. Default: 20 characters, one password.
+- Length **8-128**; generate **1-100** passwords at once. Default: 20 characters, one password.
 - Select lowercase, uppercase, digits and/or 32 ASCII symbols. Optionally exclude `0 O o 1 I l |` and require every selected character set.
 - Uses `crypto.getRandomValues`, rejection sampling to avoid modulo bias, and whole-candidate rejection to enforce required sets without insert/shuffle bias. There is **no `Math.random` fallback**.
 - Hidden by default, explicitly reveal/hide, per-password copy, copy all, and UTF-8 TXT export with a plaintext warning and confirmation **for every download**. Leaving the tab hides revealed passwords; leaving the page clears its displayed batch where page lifecycle events permit.
@@ -28,7 +28,7 @@ The app rejects missing/failing Web Crypto, empty character selections, invalid 
 
 ### Entropy model
 
-For alphabet size `N`, length `L`, and selected disjoint groups of sizes `sᵢ`, unrestricted entropy is `L × log₂(N)`. When every selected group is required, inclusion–exclusion computes `V = Σ (-1)^|S| (N − Σ sᵢ)^L`, the number of valid strings; entropy is `log₂(V)` (calculated numerically via the valid fraction). Each character index is sampled uniformly; rejecting entire candidates leaves a uniform distribution over valid strings. Displayed bits are an estimate under this model and a functioning cryptographic random source, **not crack-time estimates or a rating of any individual password**. They are per password, not a sum over the batch.
+For alphabet size `N`, length `L`, and selected disjoint groups of sizes `sᵢ`, unrestricted entropy is `L × log₂(N)`. When every selected group is required, inclusion-exclusion computes `V = Σ (-1)^|S| (N − Σ sᵢ)^L`, the number of valid strings; entropy is `log₂(V)` (calculated numerically via the valid fraction). Each character index is sampled uniformly; rejecting entire candidates leaves a uniform distribution over valid strings. Displayed bits are an estimate under this model and a functioning cryptographic random source, **not crack-time estimates or a rating of any individual password**. They are per password, not a sum over the batch.
 
 ## Run and deploy
 
