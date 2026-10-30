@@ -27,6 +27,14 @@ Copyright 2026 Kristian Mario Mišković (TekiDeki). -->
 @media(max-width:700px){body{padding:16px 12px calc(28px + env(safe-area-inset-bottom))}.header{margin-bottom:32px}.identity{gap:8px}.mark{width:40px;height:40px;border-radius:12px}.brand{font-size:18px}.lang-control{max-width:123px;padding:8px 6px;font-size:13px}.header-tools{gap:5px}.workspace{grid-template-columns:1fr;gap:16px}.intro p{font-size:15px}.card{padding:20px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.stat{padding:10px 7px}.value{font-size:17px}.label{font-size:10px}}
 @media(max-width:360px){.brand{font-size:16px}.lang-control{max-width:103px}.identity{gap:6px}.mark{width:34px;height:38px}.header{gap:6px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.group-grid{grid-template-columns:1fr}.toolbar .button{flex:1 1 auto}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+
+
+  /* regula casei: tinte de atingere pe mobil */
+  @media (pointer: coarse), (max-width: 700px) {
+    a:not(:where(p, li, figcaption) a) { min-height: 34px; display: inline-flex; align-items: center; }
+    #sourceLink { min-height: 34px; display: inline-flex; align-items: center; }
+  }
 </style>
 </head>
 <body>
